@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="nav">
             <h1>Jffrdlxmn Netowrk</h1>
             <a href="/jffrdlxmn">All Ninjas</a>
             <a href="/jffrdlxmn/create">Create New Ninja</a>

@@ -1,24 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JffrdlxmnController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/jffrdlxmn',function(){
-
-    $array = [
-        ["name" => "layla", "skill" => "75", "id" => "1"],
-        ["name" => "miya", "skill" => "45", "id" => "2"],
-    ];
-    return view('jffrdlxmn.index', ["greeting" => "hello","datas" => $array ]);
-});
-
-Route::get('/jffrdlxmn/create', function () {
-    return view('jffrdlxmn.create');
-});
-
-Route::get('/jffrdlxmn/{id}',function($id){
-    return view('jffrdlxmn.show', ["id" => $id]);
-});
+Route::get('/jffrdlxmn',[JffrdlxmnController::class,'index'])->name('jffrdlxmn.index');
+Route::get('/jffrdlxmn/create',[JffrdlxmnController::class,'create'])->name('jffrdlxmn.create');;
+Route::get('/jffrdlxmn/{id}',[JffrdlxmnController::class,'show'])->name('jffrdlxmn.show');

@@ -9,8 +9,5 @@
         </li>
         @endforeach
     </ul>
-    <div>
-        {{ $datas->links()}}
-    </div>
-
+    {{ $datas->links()}}
 </x-layout>

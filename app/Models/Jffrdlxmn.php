@@ -11,4 +11,9 @@ class Jffrdlxmn extends Model
 
     /** @use HasFactory<\Database\Factories\JffrdlxmnFactory> */
     use HasFactory;
+
+    public function dojo()
+    {
+        return $this->belongsTo(Dojo::class);
+    }
 }

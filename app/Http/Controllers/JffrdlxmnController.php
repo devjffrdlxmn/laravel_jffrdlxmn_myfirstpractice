@@ -9,12 +9,12 @@ class JffrdlxmnController extends Controller
 {
     public function index()
     {
-        $datas = Jffrdlxmn::orderBy('created_at','desc')->paginate(10);
+        $datas = Jffrdlxmn::with('dojo')->orderBy('created_at','desc')->paginate(10);
         return view('jffrdlxmn.index', ["datas" => $datas ]);
     }
     public function show($id)
     {
-        $data = Jffrdlxmn::findOrFail($id);
+        $data = Jffrdlxmn::with('dojo')->findOrFail($id);
         return view('jffrdlxmn.show', ["data" => $data]);
     }
     public function create()

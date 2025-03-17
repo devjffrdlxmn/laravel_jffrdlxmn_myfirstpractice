@@ -4,7 +4,7 @@
     <ul>
         @foreach ($datas as $data)
         <li>
-            <x-card href="{{ route('jffrdlxmn.show',$data->id)}}" :highlight="$data['skill'] > 70">
+            <x-card href="{{ route('jffrdlxmn.show',$data->id)}}" :highlight="$data->skill > 70">
               <div>
                 <h3> {{ $data->name}} </h3>
                 <p>{{ $data->dojo->name}}</p>

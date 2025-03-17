@@ -16,5 +16,9 @@
     </div>
 
 
+    <form action="{{route('jffrdlxmn.destroy',$ninja->id)}}" method="">
+
+    </form>
+
 
 </x-layout>

@@ -12,9 +12,10 @@ class JffrdlxmnController extends Controller
         $datas = Jffrdlxmn::with('dojo')->orderBy('created_at','desc')->paginate(10);
         return view('jffrdlxmn.index', ["datas" => $datas ]);
     }
-    public function show($id)
+    public function show(Jffrdlxmn $v)
     {
-        $data = Jffrdlxmn::with('dojo')->findOrFail($id);
+        // $data = Jffrdlxmn::with('dojo')->findOrFail($id);
+        $data=$v->load('dojo');
         return view('jffrdlxmn.show', ["data" => $data]);
     }
     public function create()
@@ -32,12 +33,13 @@ class JffrdlxmnController extends Controller
             'dojo_id' => 'required|exists:dojos,id',
         ]);
         Jffrdlxmn::create($validated);
-        return redirect()->route('jffrdlxmn.index');
+        return redirect()->route('jffrdlxmn.index')->with('success','Ninja Created!');
     }
 
-    public function destroy()
+    public function destroy(Jffrdlxmn $v)
     {
-
+        $v->delete();
+        return redirect()->route('jffrdlxmn.index')->with('success','Ninja Deleted!');
     }
 
 

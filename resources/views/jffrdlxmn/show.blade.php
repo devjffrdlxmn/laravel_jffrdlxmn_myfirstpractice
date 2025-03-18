@@ -16,8 +16,10 @@
     </div>
 
 
-    <form action="{{route('jffrdlxmn.destroy',$ninja->id)}}" method="">
-
+    <form action="{{route('jffrdlxmn.destroy',$data->id)}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button class="btn my-4"> Delete Ninja</button>
     </form>
 
 
